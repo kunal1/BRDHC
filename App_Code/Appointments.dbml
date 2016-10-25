@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_65818_brdhc" Class="AppointmentsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=s10.winhost.com;Initial Catalog=DB_65818_brdhc;User ID=DB_65818_brdhc_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="myCon" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.brdhc_PatientAppointments" Member="brdhc_PatientAppointments">
+    <Type Name="brdhc_PatientAppointment">
+      <Column Name="AppointmentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PatientUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentTime" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="approvalStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_GetBookedTime" Method="sp_GetBookedTime">
+    <Parameter Name="DoctorUserId" Parameter="doctorUserId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="AppointmentDate" Parameter="appointmentDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_GetBookedTimeResult">
+      <Column Name="AppointmentTime" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getAppByPatientID" Method="sp_getAppByPatientID">
+    <Parameter Name="PID" Parameter="pID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="sp_getAppByPatientIDResult">
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatientUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentTime" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="approvalStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getAppByDocID" Method="sp_getAppByDocID">
+    <Parameter Name="DocID" Parameter="docID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="sp_getAppByDocIDResult">
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatientUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentTime" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="approvalStatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SearchAppsByPatientName" Method="sp_SearchAppsByPatientName">
+    <Parameter Name="ApplicationName" Parameter="applicationName" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(256)" />
+    <ElementType Name="sp_SearchAppsByPatientNameResult">
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatientUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="AppointmentTime" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SearchAppsByDoctorId" Method="sp_SearchAppsByDoctorId">
+    <Parameter Name="ApplicationName" Parameter="applicationName" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="DocId" Parameter="docId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="sp_SearchAppsByDoctorIdResult">
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PatientUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DoctorUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="AppointmentTime" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOnDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

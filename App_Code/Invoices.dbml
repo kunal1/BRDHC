@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_65818_brdhc" Class="InvoicesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=s10.winhost.com;Initial Catalog=DB_65818_brdhc;User ID=DB_65818_brdhc_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="myCon" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.brdhc_Invoice" Member="brdhc_Invoices">
+    <Type Name="brdhc_Invoice">
+      <Column Name="InvoiceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DueOn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PaidOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_getInvoiceByDocName" Method="sp_getInvoiceByDocName">
+    <Parameter Name="docUName" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="sp_getInvoiceByDocNameResult">
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmt" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DueOn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getInvoiceByDocStatus" Method="sp_getInvoiceByDocStatus">
+    <Parameter Name="docUName" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="sp_getInvoiceByDocStatusResult">
+      <Column Name="PatientName" Type="System.String" DbType="VarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PatientID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmt" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DueOn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PaidOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

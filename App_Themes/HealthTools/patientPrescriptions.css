@@ -1,0 +1,27 @@
+﻿body {
+}
+
+.blocker{
+    z-index:1000;
+    height:100%;
+    /*width:100%;*/
+    background: white;
+    opacity:0.9;
+    position: absolute;
+}
+
+.aboveAll{
+    z-index:1010;
+}
+
+.pnlDonate
+{
+    margin:15px;
+    padding:10px;
+}
+
+.myLabel
+{
+    color:#668d8e;
+    font-size:24px;
+}

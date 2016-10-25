@@ -1,0 +1,82 @@
+﻿
+
+.itemBtn {
+    padding: 2px;
+}
+
+.r_gvItems {
+    text-align : center;
+}
+
+.r_gvItems input[type="text"] {
+    margin: 0 !important;
+}
+
+select {
+padding:5px;
+    margin-left: -15px !important;
+    border:solid 1px #a4cebe;
+    font-size:15px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.fullWidth {
+    width: 100% !important;
+}
+
+.lnk {
+    color: #004153;
+    text-decoration: underline;
+}
+
+/* modal style */
+.ModalPopupBG
+{
+    background-color: #a4cebe;
+    filter: alpha(opacity=50);
+    opacity: 0.4;
+}
+
+.popupItems
+{
+    min-width:200px;
+    min-height:150px;
+    background:white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.PopupHeader {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+.btnRight {
+    position: relative;
+    right:0;
+}
+
+.gvSubItems {
+    margin: 20px 0;
+    width: auto;
+}
+
+.r_pnlTotal {
+    margin-top:20px;
+}
+
+.r_gvWrapper {
+    height: 150px;
+    overflow: scroll;
+    max-width: 565px;
+    text-align: center;
+}
+
+.ovScroll {
+    overflow:scroll;
+}
+
+.r_pendingInv input {
+    margin-left: 0 !important;
+}

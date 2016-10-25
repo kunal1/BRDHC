@@ -1,0 +1,103 @@
+﻿#googleMap {
+width:95%;
+height:380px;
+border: 2px solid #668d8e;
+}
+.addPadding {
+padding:5px;
+background-color:rgba(250,250,250, 0.5);
+}
+p {
+color:black;
+}
+#contactLeft {
+    float:left;
+    width:450px;
+    margin-bottom:50px;
+}
+.textArea {
+max-width:95%;
+}
+#contactRight {
+    width:50%;
+    margin-top:25px;
+    float:right;
+    margin-bottom:25px;
+}
+.textContact {
+    padding:5px;
+    margin-left:-15px;
+    border:solid 1px #a4cebe;
+    font-size:15px;
+    font-family: 'Roboto Slab', serif;
+}
+#panelWrapper {
+width:450px;
+height:0px;
+overflow:scroll;
+}
+.viewsStyle p{
+color:black;
+}
+#d_panel {
+    font-size:15px;
+width:450px;
+}
+    #d_panel th,#d_panel tr,#d_panel td {
+    width:425px;
+    }
+#cHeader {
+    font-size: 30px;
+    border-bottom: 2px solid #b2bb5d;
+    color: #668d8e;
+}
+
+
+#link
+{
+    float:right;
+}
+
+.fheader {
+    font-size: 20px;
+    color: #668d8e;
+}
+.message {
+color:red;
+font-size:24px;
+}
+.viewFont {
+font-weight:bold;
+}
+.viewMsg {
+font-size:17px;
+}
+.replyMsg {
+color:grey;
+font-size:17px;
+padding-left:50px;
+}
+.replyBox {
+height:0px;
+overflow:hidden;
+}
+.cSmall {
+font-size:11px;
+}
+#careerWrapper p{
+color:black;
+}
+@media only screen and (max-width: 480px) {
+    .textContact {
+    width:98%;
+    margin-left:-10px;
+    margin:0 auto;
+    }
+    
+    input[type="button"],input[type="submit"]
+    {
+        width:100%;
+        padding:2px;
+        font-size:0.8em;
+    }
+}
